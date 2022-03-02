@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300&display=swap');
+
+*{
+  margin: 0%;
+  padding: 0%;
+  
+}
+
+.flowers{
+  width: 100%;
+}
+.container1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0px;
+  
+}
+.title{
+  font-family: 'Sacramento', cursive;
+  text-align: center;
+  font-size: 80px;
+}
+.subtitle{
+  font-family: 'Mohave', sans-serif;
+  text-align: center;
+  font-size: 40px;
+}
