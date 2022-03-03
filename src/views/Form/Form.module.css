@@ -9,43 +9,44 @@
 }
 
 .containertask {
+  
   display: flex;
   justify-content: center;
-  margin-right: 15px;
+  
 
 }
 .task {
-  width: 514px;
+  width: 200px;
   height: 55px;
+  margin-left: 10px;
   background-color: #E393A6;
   text-align: center;
   padding-top: 20px;
   color: white;
   font-family: 'Mohave', sans-serif;
-  font-size: 30px;
+  font-size: 23px;
 }
 .buttonadd {
   display: flex;
   justify-content: center;
 }
 .add {
-  width: 195px;
+  width: 100px;
   height: 51px;
+  margin-top: 20px;
   background-color: #BEACC7;
   border-radius: 12px;
   color: #733561;
   font-family: 'Mohave', sans-serif;
-  font-size: 35px;
+  font-size: 22px;
   cursor: pointer;
 }
 
-
 .input{
-  position: absolute;
-  width: 90vw;
+  width: 80vw;
   height: 70px;
-  margin-left: 18%;
-  padding-left: 5%;
+ margin-right: 415px;
+  padding-left: 5px;
   margin-top: 10px;
   background: #FFFFFF;
   border: 3px solid #AE889F; 
@@ -57,3 +58,41 @@
   font-size: 30px;
 }
 
+/* @media only screen and (min-width: 1024px){
+  .add {
+    width: 195px;
+    height: 51px;
+    margin-top: 20px;
+    background-color: #BEACC7;
+    border-radius: 12px;
+    color: #733561;
+    font-family: 'Mohave', sans-serif;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  .task {
+    width: 514px;
+    height: 55px;
+    background-color: #E393A6;
+    text-align: center;
+    padding-top: 20px;
+    color: white;
+    font-family: 'Mohave', sans-serif;
+    font-size: 30px;
+  }
+  .input{
+  width: 60vw;
+  height: 70px;
+  margin-left: 200px;
+  padding-left: 5px;
+  margin-top: 10px;
+  background: #FFFFFF;
+  border: 3px solid #AE889F; 
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 23px;
+  color:#733561;
+  font-family: 'Mohave', sans-serif;
+  font-size: 30px;
+} */
+}

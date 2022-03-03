@@ -35,11 +35,7 @@ const Form = ({ addTodo }) => {
             <h2 className={style.task}>TAREAS A REALIZAR</h2>
           </div>
 
-          <div className={style.buttonadd}>
-            <button type="submit" className={style.add}>
-              <i className="white plus icon" onClick={()=> showAlert()}></i>AGREGAR
-            </button>
-          </div>
+          
         </div>
         <form className="ui form" onSubmit={handleFormSubmit}>
           <div className="ui grid center aligned">
@@ -53,23 +49,14 @@ const Form = ({ addTodo }) => {
                   placeholder="Escribe algo para hacer..."
                 />
               </div>
-                    {/*<div className="ui grid center aligned">
-                <div className="row">
-                    <div className="column five wide">
-                        <input
-                            value={inputValue}
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder="Enter something to do..."
-                        />
-                    </div>
-                    
-                    <div className="column one wide">
-                        <button onClick={()=> showAlert()} type="submit" className={style.alert }><i className="white plus icon"></i>AGREGAR</button>
-                    </div>
-                </div>*/}
             </div>
+            <div className={style.buttonadd}>
+            <button onClick={()=> showAlert()} type="submit" className={style.add}>
+              <i className="white plus icon" ></i>AGREGAR
+            </button>
           </div>
+          </div>
+          
         </form>
       </>
     );
