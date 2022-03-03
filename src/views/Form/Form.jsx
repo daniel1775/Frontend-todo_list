@@ -1,7 +1,19 @@
 import React, { useState } from "react";
+import swal from "sweetalert";
+import style from "./Form.module.css";
 
 const Form = ({ addTodo }) => {
     const [inputValue, setInputValue] = useState("");
+
+    const showAlert=()=> {
+        swal({
+            title: "Tarea agregada",
+            icon: "success",
+            button: "Aceptar",
+            timer: "4000"
+
+        })
+    }
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
@@ -30,7 +42,7 @@ const Form = ({ addTodo }) => {
                     </div>
                     
                     <div className="column one wide">
-                        <button type="submit" className="ui button circular icon green"><i className="white plus icon"></i></button>
+                        <button onClick={()=> showAlert()} type="submit" className={style.alert }><i className="white plus icon"></i>AGREGAR</button>
                     </div>
                 </div>
             </div>

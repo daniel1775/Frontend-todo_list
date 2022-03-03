@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import style from "./Todo.module.css";
 
 const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -36,7 +37,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     };
 
     return (
-        <div className="row">
+        <div className={style.row}>
             {
             isEditing ?
                 <div className="column seven wide">
@@ -47,30 +48,34 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
                             autoFocus={true}
                             value={tempValue}
                         />
+                        
                     </div>
                 </div> :
                 <>
+                <div className={style.rowcont}>
                     <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
-                        <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
+                        <h2 className={"ui header" + (completedState ? " green" : "")}> {value}</h2>
                     </div>
 
                     <div className="column one wide">
                         <button
-                            className={"ui button circular icon" + (completedState ? " blue" : " green")}
-                            onClick={handleButtonClick}
+                            className={style.buti + (completedState ? " blue" : " green")}
+                            onClick={handleButtonClick} 
                         >
                             <i className="white check icon"></i>
-                        </button>
+                        FINALIZADA</button>
                     </div>
 
                     <div className="column one wide">
                         <button
                             onClick={removeTodoItemProp}
-                            className="ui button circular icon red"
+                            className={style.buti2}
                         >
                             <i className="white remove icon"></i>
-                        </button>
+                        ELIMINAR</button>
                     </div>
+                    
+             </div>
                 </>
             }
         </div>
