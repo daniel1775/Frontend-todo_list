@@ -42,11 +42,12 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
             isEditing ?
                 <div className={style.column_seven_wide}>
                     <div className="ui input fluid">
-                        <input
+                        <input className={style.edit}
                             onChange={handleInputOnChange}
                             onKeyDown={handleInputKeyDown}
                             autoFocus={true}
                             value={tempValue}
+                            placeholder="Editar tarea"
                         />
                         
                     </div>
