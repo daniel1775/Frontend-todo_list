@@ -23,12 +23,14 @@ const App = () => {
     }, []);
 
     const addTodo = async (item) => {
-        const { data } = await todos.post("/todos", item);
+        console.log(item);
+        const { data } = await todos.post("/todos/create", item);
         setTodoList((oldList) => [...oldList, data]);
     };
 
     const removeTodo = async (id) => {
-        await todos.delete(`/todos/${id}`);
+        await todos.delete(`/todos/delete/${id}`);
+        console.log("Hola");
         setTodoList((oldList) => oldList.filter((item) => item._id !== id));
     };
 
@@ -39,8 +41,8 @@ const App = () => {
     return (
         <>
         <div className="header">
-        <img className="flowers" src={flower} alt="garden"/>
-       </div>
+            <img className="flowers" src={flower} alt="garden"/>
+        </div>
         <div className="ui container center aligned">
             <Section>
                 <h1 className="title">{appTitle}</h1>   
