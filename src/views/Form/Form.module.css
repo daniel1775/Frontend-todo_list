@@ -36,6 +36,7 @@
   color: #733561;
   font-family: 'Mohave', sans-serif;
   font-size: 35px;
+  cursor: pointer;
 }
 
 
@@ -56,7 +57,5 @@
   font-size: 30px;
 }
 
-.alert{
-    cursor: pointer;
-}
+
 
