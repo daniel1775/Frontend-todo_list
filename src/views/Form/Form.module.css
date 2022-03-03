@@ -58,7 +58,7 @@
   font-size: 30px;
 }
 
-/* /* @media only screen and (min-width: 1024px){
+@media only screen and (min-width: 1024px){
   .add {
     width: 195px;
     height: 51px;
@@ -95,4 +95,4 @@
   font-family: 'Mohave', sans-serif;
   font-size: 30px;
 } 
-} */
+}
