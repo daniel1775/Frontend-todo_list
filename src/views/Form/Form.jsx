@@ -36,9 +36,7 @@ const Form = ({ addTodo }) => {
             <h2 className={style.task}>TAREAS A REALIZAR</h2>
           </div>
 
-          <div className={style.buttonadd}>
-            
-          </div>
+          
         </div>
         <form className="ui form" onSubmit={handleFormSubmit}>
           <div className="ui grid center aligned">
@@ -53,10 +51,13 @@ const Form = ({ addTodo }) => {
                 />
               </div>
             </div>
+            <div className={style.buttonadd}>
+            <button onClick={()=> showAlert()} type="submit" className={style.add}>
+              <i className="white plus icon" ></i>AGREGAR
+            </button>
           </div>
-          <button onClick={()=> showAlert()} type="submit" className={style.add}>
-            <i className="white plus icon"></i>AGREGAR
-          </button>
+          </div>
+          
         </form>
       </>
     );

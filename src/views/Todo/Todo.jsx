@@ -40,22 +40,27 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
         <div className={style.row}>
             {
             isEditing ?
-                <div className="column seven wide">
+                <div className={style.column_seven_wide}>
                     <div className="ui input fluid">
-                        <input
+                        <input className={style.edit}
                             onChange={handleInputOnChange}
                             onKeyDown={handleInputKeyDown}
                             autoFocus={true}
                             value={tempValue}
+                            placeholder="Editar tarea"
                         />
                         
                     </div>
+                    
                 </div> :
                 <>
+                <div className={style.row1}>
+                
                 <div className={style.rowcont}>
                     <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
                         <h2 className={"ui header" + (completedState ? " green" : "")}> {value}</h2>
                     </div>
+                    <div className={style.button}>
 
                     <div className="column one wide">
                         <button
@@ -74,7 +79,8 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
                             <i className="white remove icon"></i>
                         ELIMINAR</button>
                     </div>
-                    
+                    </div>
+                    </div>
              </div>
                 </>
             }
