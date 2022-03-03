@@ -37,7 +37,7 @@ const Form = ({ addTodo }) => {
 
           <div className={style.buttonadd}>
             <button type="submit" className={style.add}>
-              <i className="white plus icon"></i>AGREGAR
+              <i className="white plus icon" onClick={()=> showAlert()}></i>AGREGAR
             </button>
           </div>
         </div>
@@ -52,12 +52,6 @@ const Form = ({ addTodo }) => {
                   type="text"
                   placeholder="Escribe algo para hacer..."
                 />
-              </div>
-
-              <div className="column one wide">
-                <div className="column one wide">
-                  <button onClick={()=> showAlert()} type="submit" className={style.alert }><i className="white plus icon"></i>AGREGAR</button>
-                </div>
               </div>
                     {/*<div className="ui grid center aligned">
                 <div className="row">

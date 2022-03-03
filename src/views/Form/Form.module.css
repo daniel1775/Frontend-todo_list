@@ -36,12 +36,13 @@
   color: #733561;
   font-family: 'Mohave', sans-serif;
   font-size: 35px;
+  cursor: pointer;
 }
 
 
 .input{
   position: absolute;
-  width: 756px;
+  width: 90vw;
   height: 70px;
   margin-left: 18%;
   padding-left: 5%;
@@ -54,9 +55,5 @@
   color:#733561;
   font-family: 'Mohave', sans-serif;
   font-size: 30px;
-}
-
-.alert{
-    cursor: pointer;
 }
 
