@@ -55,3 +55,8 @@
   font-family: 'Mohave', sans-serif;
   font-size: 30px;
 }
+
+.alert{
+    cursor: pointer;
+}
+
