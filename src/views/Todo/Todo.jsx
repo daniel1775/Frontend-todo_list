@@ -68,7 +68,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
 
                     <div className="column one wide">
                         <button
-                            onClick={removeTodoItemProp}
+                            onClick={() => removeTodoItemProp()}
                             className={style.buti2}
                         >
                             <i className="white remove icon"></i>

@@ -12,6 +12,9 @@ const appTitle = "Flores del Tampo"; //constante para el titulo
 const App = () => {
     const [todoList, setTodoList] = useState([]);
 
+    useEffect(() => {
+        console.log("todolist changed");
+    }, [todoList]);
 
     useEffect(() => {
         async function fetchData() {
@@ -23,19 +26,19 @@ const App = () => {
     }, []);
 
     const addTodo = async (item) => {
-        console.log(item);
+        console.log("CREADO CORRECTAMENTE");
         const { data } = await todos.post("/todos/create", item);
         setTodoList((oldList) => [...oldList, data]);
     };
 
     const removeTodo = async (id) => {
-        await todos.delete(`/todos/delete/${id}`);
-        console.log("Hola");
         setTodoList((oldList) => oldList.filter((item) => item._id !== id));
+        console.log("ELIMINAR");
+        await todos.delete(`/todos/delete/${id}`);
     };
 
     const editTodo = async (id, item) => {
-        await todos.put(`/todos/${id}`, item);
+        await todos.put(`/todos/update/${id}`, item);
     };
 
     return (
