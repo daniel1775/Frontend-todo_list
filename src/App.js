@@ -7,10 +7,11 @@ import List from "./views/List/List.jsx";
 import flower from './img/flower.png';
 import './App.css'
 
-const appTitle = "Flores del Tampo";
+const appTitle = "Flores del Tampo"; //constante para el titulo
 
 const App = () => {
     const [todoList, setTodoList] = useState([]);
+
 
     useEffect(() => {
         async function fetchData() {
@@ -42,10 +43,10 @@ const App = () => {
        </div>
         <div className="ui container center aligned">
             <Section>
-                <h1 className="title">{appTitle}</h1>
+                <h1 className="title">{appTitle}</h1>   
                 <h2 className="subtitle">TO-DO LIST</h2>
             </Section>
-
+    
             <Section>
                 <Form addTodo={addTodo} />
             </Section>

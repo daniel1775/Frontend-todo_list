@@ -1,0 +1,24 @@
+/* .rowcont{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    
+} */
+.buti{
+    width: 150px;
+    height: 50px;
+    background-color: #F6C8C8;
+    border-style:solid;
+    border: 3px solid #AE889F;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.buti2{
+    width: 150px;
+    height: 50px;
+    background-color: #EFEFEF;
+    border-style:solid;
+    border: 3px solid #AE889F;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
