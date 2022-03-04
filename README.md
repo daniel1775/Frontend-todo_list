@@ -23,7 +23,7 @@ This is a collaborative project where its development was to create a list of ta
 
  📦 𝐃𝐞𝐩𝐥𝐨𝐲:
 
- ▪️ 
+ ▪️  https://floristeria-tampa.netlify.app/
 
  ✔️ 𝐂𝐨𝐝𝐞𝐫𝐬:
 
