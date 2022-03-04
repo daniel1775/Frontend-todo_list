@@ -2,7 +2,6 @@
 *{
   margin: 0%;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 .container1 {
   display: flex;

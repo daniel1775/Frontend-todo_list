@@ -7,6 +7,10 @@
   
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .flowers{
   width: 100vw;
   height: 100px;
