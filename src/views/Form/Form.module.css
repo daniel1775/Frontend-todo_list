@@ -68,8 +68,9 @@
 }
 
 .input{
-  width: 70vw;
+  width: 60vw;
   height: 70px;
+  margin-right: 50px;
   padding-left: 5px;
   margin-top: 10px;
   background: #FFFFFF;
