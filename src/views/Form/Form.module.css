@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300&display=swap');
-
+*{
+  margin: 0%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 .container1 {
   display: flex;
   flex-direction: column;
@@ -81,6 +85,11 @@
 
 
 @media only screen and (min-width: 1024px){
+  *{
+    margin: 0%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
   .add {
     width: 195px;
     height: 51px;
