@@ -12,9 +12,9 @@ const appTitle = "Flores del Tampo"; //constante para el titulo
 const App = () => {
     const [todoList, setTodoList] = useState([]);
 
-    async function fetchData(current) {
+    async function fetchData() {
         const { data } = await todos.get("/todos/search-all");
-        await current!==undefined ? setTodoList(current) : setTodoList(data);
+        setTodoList(data);
     }
 
     useEffect(() => {
@@ -23,6 +23,8 @@ const App = () => {
 
     const addTodo = async (item) => {
         await todos.post("/todos/create", item);
+        //http://localhost:3030
+        //https://backend-tamba-flowers.herokuapp.com/todos/search-all
         fetch("https://backend-tamba-flowers.herokuapp.com/todos/search-all")
         .then(da => da.json())
         .then(resul => setTodoList(resul));
@@ -30,8 +32,13 @@ const App = () => {
     };
 
     const removeTodo = async (id) => {
-        setTodoList((oldList) => oldList.filter((item) => item._id !== id));
         await todos.delete(`/todos/delete/${id}`);
+        setTodoList((oldList) => oldList.filter((item) => item._id !== id));
+    };
+
+    const finalizedTodo = async (id) => {
+        await todos.delete(`/todos/finalized/${id}`);
+        setTodoList((oldList) => oldList.filter((item) => item._id !== id));
     };
 
     const editTodo = async (id, item) => {
@@ -57,6 +64,7 @@ const App = () => {
                 <List
                     editTodoListProp={editTodo}
                     removeTodoListProp={removeTodo}
+                    finalizedTodoListProp={finalizedTodo}
                     list={todoList}
                 />
             </Section>
