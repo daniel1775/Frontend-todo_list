@@ -40,14 +40,17 @@
   font-family: 'Mohave', sans-serif;
   font-size: 22px;
   cursor: pointer;
+  
 }
-
+:hover.add{
+  background-color: #E393A6;
+}
 .input{
   width: 80vw;
   height: 70px;
-  margin-right: 415px;
-  padding-left: 5px;
-  margin-top: 10px;
+  margin-left: 7%;
+  padding-left: 1%;
+  margin-top: 1%;
   background: #FFFFFF;
   border: 3px solid #AE889F; 
   box-sizing: border-box;
@@ -57,6 +60,7 @@
   font-family: 'Mohave', sans-serif;
   font-size: 30px;
 }
+
 
 /* @media only screen and (min-width: 1024px){
   .add {

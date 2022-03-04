@@ -1,9 +1,12 @@
 /* the React module is called with the UseState property to add the states in the functions*/
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 /* import aweetalert module to add an alert window when a task is added */
 import swal from "sweetalert";
 /* The styles module is called */
 import style from "./Form.module.css";
+
+import { SearchBar } from "../SearchBar/SearchBar";
+
 
 /* The addTodo function is created that will change state */
 const Form = ({ addTodo }) => {
@@ -34,9 +37,46 @@ const Form = ({ addTodo }) => {
     setInputValue("");
   };
 
+    const baseUrl = "https://backend-tamba-flowers.herokuapp.com";
+    const [text, setText] = useState("");
+    let searchCharacters = [];
+
+    const [characters, setCharacters] = useState([]);
+    const [info, setInfo] = useState({});
+
+    const consumeApi = async (url) => {
+      const obj = await fetch(url); //guarde los datos de la api
+      const data = await obj.json(); //conviertalos a formato json y guardelos en data
+      setCharacters(data.results); //consuma el api desde results
+      setInfo(data.info);
+    };
+
+    
+
+      useEffect(() => {
+        consumeApi(baseUrl);
+      }, []);
+
+  if (characters.length >= 1) {
+    searchCharacters = characters.filter((character) => {
+      const characterText = character.name.toLowerCase();
+      const searchText = text.toLowerCase();
+      return characterText.includes(searchText);
+    });
+  } else {
+    searchCharacters = characters;
+  }
+  console.log(searchCharacters);
+
   return (
     <>
-       {/*calling styles for container1 */}
+      <SearchBar
+        text={text}
+        setText={setText}
+        prev={info.prev}
+        next={info.next}
+      />
+      {/*calling styles for container1 */}
       <div className={style.container1}>
         <div className={style.containertask}>
           {/*the title TAREAS A REALIZAR  is printed on the screen */}
@@ -55,7 +95,7 @@ const Form = ({ addTodo }) => {
                 value={inputValue}
                 onChange={handleInputChange}
                 type="text"
-                placeholder="Escribe algo para hacer..."
+                placeholder="Escribe aquí algo para hacer..."
               />
             </div>
           </div>
