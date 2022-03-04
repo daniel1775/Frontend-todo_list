@@ -18,7 +18,7 @@ const App = () => {
     }
 
     useEffect(() => {
-        console.log(todoList);
+        console.log("POST FIXED");
     }, [todoList]);
 
     useEffect(() => {
