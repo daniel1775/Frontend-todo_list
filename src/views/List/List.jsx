@@ -2,7 +2,7 @@ import React from "react";
 import Todo from "../Todo/Todo.jsx";
 
 const List = ({ list, removeTodoListProp, editTodoListProp }) => {
-    const renderedList = list.map(
+    const renderedList = list?.map(
         (item) => (
             <Todo
                 title={item.title}

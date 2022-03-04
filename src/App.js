@@ -12,28 +12,29 @@ const appTitle = "Flores del Tampo"; //constante para el titulo
 const App = () => {
     const [todoList, setTodoList] = useState([]);
 
+    async function fetchData(current) {
+        const { data } = await todos.get("/todos/search-all");
+        await current!==undefined ? setTodoList(current) : setTodoList(data);
+    }
+
     useEffect(() => {
-        console.log("change accepted");
+        console.log(todoList);
     }, [todoList]);
 
     useEffect(() => {
-        async function fetchData() {
-            const { data } = await todos.get("/todos/search-all");
-            setTodoList(data);
-        }
-
         fetchData();
     }, []);
 
     const addTodo = async (item) => {
-        console.log("CREADO CORRECTAMENTE");
-        const { data } = await todos.post("/todos/create", item);
-        setTodoList((oldList) => [...oldList, data]);
+        await todos.post("/todos/create", item);
+        fetch("https://backend-tamba-flowers.herokuapp.com/todos/search-all")
+        .then(da => da.json())
+        .then(resul => setTodoList(resul));
+        //setTodoList((oldList) => [...oldList, data]);
     };
 
     const removeTodo = async (id) => {
         setTodoList((oldList) => oldList.filter((item) => item._id !== id));
-        console.log("ELIMINAR");
         await todos.delete(`/todos/delete/${id}`);
     };
 
