@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import swal from "sweetalert";
 import style from "./Form.module.css";
 
-const Form = ({ addTodo }) => {
+const Form = ({ addTodo, setDeleted, setFinalized, setAll }) => {
     const [inputValue, setInputValue] = useState("");
 
     const showAlert=()=> {
@@ -29,11 +29,15 @@ const Form = ({ addTodo }) => {
     return (
       <>
         <div className={style.container1}>
-          <div className={style.containertask}>
-            <h2 className={style.task}>TAREAS A REALIZAR</h2>
+          <div className={style.view_buttons} action="">
+            <button onClick={() => setDeleted(true)} className={style.button_view}>Ver Eliminados</button>
+            <button onClick={() => setAll(true)} className={style.button_view}>Ver Pendientes</button>
+            <button onClick={() => setFinalized(true)} className={style.button_view}>Ver Finalizados</button>
           </div>
 
-          
+          {/* <div className={style.containertask}>
+            <h2 className={style.task}>TAREAS A REALIZAR</h2>
+          </div> */}
         </div>
         <form className="ui form" onSubmit={handleFormSubmit}>
           <div className="ui grid center aligned">
