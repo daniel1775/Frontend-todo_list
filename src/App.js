@@ -18,10 +18,6 @@ const App = () => {
     }
 
     useEffect(() => {
-        console.log("POST FIXED");
-    }, [todoList]);
-
-    useEffect(() => {
         fetchData();
     }, []);
 
