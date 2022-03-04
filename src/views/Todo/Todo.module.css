@@ -73,7 +73,16 @@
     height: 50px;
     
   }
- 
+
+     
+.row1_changed{
+   background-color: #9e6e9fe0;
+   color: aliceblue;
+}
+
+.row1_normal{
+   background: #F7CEF8;
+}
 
           
 
