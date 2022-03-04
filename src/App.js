@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import todos from "./apis";
-
+import Eliminadas from './img/Eliminadas.png';
+import Finalizadas from './img/Finalizadas.png';
 import Form from "./views/Form/Form.jsx";
 import Section from "./views/Section/Section.jsx";
 import List from "./views/List/List.jsx";
@@ -43,27 +44,28 @@ const App = () => {
 
     return (
         <>
-        <div className="header">
-            <img className="flowers" src={flower} alt="garden"/>
-        </div>
-        <div className="ui container center aligned">
-            <Section>
-                <h1 className="title">{appTitle}</h1>   
-                <h2 className="subtitle">TO-DO LIST</h2>
-            </Section>
-    
-            <Section>
-                <Form addTodo={addTodo} />
-            </Section>
+            <div className="header">
+                <img className="flowers" src={flower} alt="garden" />
+            </div>
+           
+            <div className="ui container center aligned">
+                <Section>
+                    <h1 className="title">{appTitle}</h1>
+                    <h2 className="subtitle">TO-DO LIST</h2>
+                </Section>
 
-            <Section>
-                <List
-                    editTodoListProp={editTodo}
-                    removeTodoListProp={removeTodo}
-                    list={todoList}
-                />
-            </Section>
-        </div>
+                <Section>
+                    <Form addTodo={addTodo} />
+                </Section>
+
+                <Section>
+                    <List
+                        editTodoListProp={editTodo}
+                        removeTodoListProp={removeTodo}
+                        list={todoList}
+                    />
+                </Section>
+            </div>
         </>
     );
 };
