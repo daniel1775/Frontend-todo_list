@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import style from "./Todo.module.css";
 
-const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
+const Todo = ({ title, completed, removeTodoItemProp, finalizedTodoListProp, editTodoItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
-    const [completedState, setCompleted] = useState(completed);
     const [check, setCheck] = useState(false);
+    const [completedState] = useState(completed);
 
     const handleDivDoubleClick = () => {
         setIsEditing(true);
@@ -29,13 +29,14 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
         setTempValue(e.target.value);
     };
 
-    const handleButtonClick = () => {
+    /* const handleButtonClick = () => {
         setCompleted((oldCompleted) => {
             const newState = !oldCompleted;
             editTodoItemProp({ completed: newState });
+            console.log("Entra a finalizado");
             return newState;
         });
-    };
+    }; */
 
     return (
         <div className={style.row}>
@@ -69,7 +70,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
                     <div className="column one wide">
                         <button
                             className={style.buti + (completedState ? " blue" : " green")}
-                            onClick={handleButtonClick} 
+                            onClick={() => finalizedTodoListProp()} 
                         >
                             <i className="white check icon"></i>
                         FINALIZADA</button>

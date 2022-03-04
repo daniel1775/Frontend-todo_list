@@ -1,5 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "https://backend-tamba-flowers.herokuapp.com/"
+    //http://localhost:3030
+    //https://backend-tamba-flowers.herokuapp.com
+    baseURL: "https://backend-tamba-flowers.herokuapp.com"
 });
