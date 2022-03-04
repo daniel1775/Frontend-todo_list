@@ -5,6 +5,7 @@ const Todo = ({ title, completed, removeTodoItemProp, finalizedTodoListProp, edi
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
+    const [check, setCheck] = useState(false);
     const [completedState] = useState(completed);
 
     const handleDivDoubleClick = () => {
@@ -43,19 +44,22 @@ const Todo = ({ title, completed, removeTodoItemProp, finalizedTodoListProp, edi
             isEditing ?
                 <div className={style.column_seven_wide}>
                     <div className="ui input fluid">
-                        <input className={style.edit}
+                        <input className={style.edit} 
                             onChange={handleInputOnChange}
                             onKeyDown={handleInputKeyDown}
                             autoFocus={true}
                             value={tempValue}
                             placeholder="Editar tarea"
+                            
                         />
                         
                     </div>
                     
                 </div> :
                 <>
-                <div className={style.row1}>
+                <div className={`${style.row1} ${check ? style.row1_changed : style.row1_normal}`}>
+                {console.log(typeof check)}
+                <input checked={check} className={style.check} onClick={() => setCheck(!check)} value={check} type="checkbox"  />
                 
                 <div className={style.rowcont}>
                     <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
