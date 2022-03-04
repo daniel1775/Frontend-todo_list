@@ -13,7 +13,7 @@ const App = () => {
     const [todoList, setTodoList] = useState([]);
 
     useEffect(() => {
-        console.log("todolist changed");
+        console.log("change accepted");
     }, [todoList]);
 
     useEffect(() => {
